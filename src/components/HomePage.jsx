@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import UseContext from '../contexts/UseContext';
 import CartIcon from './CartIcon';
-
-const HomePage = () => {
+import { Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProductPage from './ProductPage';
+const HomePage = ({products}) => {
 
     const {allData} = useContext(UseContext);
     const {getData} = useContext(UseContext);
+    const[link,setLink] = useState(``);
+
     
 
     useEffect(() => {
@@ -25,7 +29,11 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Product Cards */}
           {allData.map((item) =>(
-             <div className="bg-white rounded-lg overflow-hidden shadow-md">
+
+             <Link to={link} key={item.id}>
+             <div className="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer"
+             onClick={() =>setLink(`/product/${item.id}`)}
+             >
              <img src={item.image} alt="Product" className="w-full h-48 object-cover object-center" />
              <div className="p-4">
                <h2 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h2>
@@ -40,6 +48,7 @@ const HomePage = () => {
                </div>
              </div>
            </div>
+           </Link>
           ))}
         </div>
       </div>
