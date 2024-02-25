@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import UseContext from '../contexts/UseContext';
+import CartIcon from './CartIcon';
 
 const HomePage = () => {
 
@@ -14,8 +15,13 @@ const HomePage = () => {
   return (
     <div className="bg-gray-100 h-screen w-full select-none">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-semibold text-gray-800 mb-4">Welcome to My E-Shop</h1>
-        <p className="text-lg text-gray-600 mb-12">Your one-stop shop for all your needs.</p>
+        <div className='flex flex-wrap justify-between'>
+            <div className='block'>
+                <h1 className="text-3xl font-semibold text-gray-800 mb-4">Welcome to My E-Shop</h1>
+                <p className="text-lg text-gray-600 mb-12">Your one-stop shop for all your needs.</p>
+            </div>
+            <CartIcon/>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Product Cards */}
           {allData.map((item) =>(
