@@ -8,9 +8,9 @@ const Navabara = () => {
   return (
     <div>
       {isAuthenticated ? (
-        <button onClick={() => logout({ returnTo: window.location.origin })} className='px-3 py-2 rounded-xl bg-slate-500 cursor-pointer'>Logout</button>
+        <button onClick={() => logout({ returnTo: window.location.origin })} className='px-3 py-2 rounded-xl bg-slate-500 cursor-pointer text-slate-100'>Logout</button>
       ) : (
-        <button onClick={loginWithRedirect} className='px-3 py-2 rounded-xl bg-slate-500 cursor-pointer'>Login</button>
+        <button onClick={loginWithRedirect} className='px-3 py-2 rounded-xl bg-slate-500 cursor-pointer text-slate-100'>Login</button>
       )}
     </div>
   );
