@@ -48,7 +48,9 @@ else{
               <p className="text-sm text-gray-600">{item.category}</p>
             </div>
           </div>
-          <button className="text-red-500 hover:text-red-700">Remove</button>
+          <button className="text-red-500 hover:text-red-700"
+          onClick={() => removeItem(item.id)}
+          >Remove</button>
         </div>
       ))}
     </div>
