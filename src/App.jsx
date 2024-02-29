@@ -2,8 +2,8 @@ import React from 'react'
 import UseContextProvider from './contexts/UseContextProvider'
 import HomePage from './components/HomePage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ProductPage from './components/ProductPage';
 import CartPage from './components/CartPage';
+
 
 function App() {
   return (

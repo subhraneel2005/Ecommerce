@@ -4,6 +4,7 @@ import UseContext from './UseContext'
 const UseContextProvider = ({children}) => {
 
   const [cart, setCart] = useState([]);
+ 
 
   const handleClick = (newItem) => {
     setCart( prev => {
